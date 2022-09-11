@@ -8,8 +8,7 @@ const path = require("path");
 const OutputDir = path.resolve(__dirname, "dist");
 const outputPath = path.join(OutputDir, "team.html");
 
-const render = require("./lib/makehtml");
-
+const render = require("./lib/generateHTML");
 
 const employees = [];
 
@@ -32,7 +31,7 @@ employeeRole = () => {
             addIntern();
         }
     })
-}
+};
 
 addEngineer = () => {
     return inquirer.prompt([
@@ -118,7 +117,7 @@ addEmployee = () => {
 
 startApp = () => {
     console.log("Hello \n Aswer the questions \n Your results will be in the dist folder titled team.html");
-    return inquirer.createPromptModule([
+    return inquirer.prompt([
         {
             type: "input",
             message: "Who is the team's Manager?",
